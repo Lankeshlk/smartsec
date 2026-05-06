@@ -1,0 +1,4 @@
+package com.smartsec.model;
+
+public class AiSuggestion {
+}
