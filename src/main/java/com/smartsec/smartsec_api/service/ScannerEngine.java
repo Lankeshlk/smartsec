@@ -2,7 +2,7 @@ package com.smartsec.smartsec_api.service;
 
 import com.smartsec.smartsec_api.model.Vulnerability;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
