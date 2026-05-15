@@ -25,7 +25,7 @@ public class ScannerEngine {
     @Value("${ai.api.url}")
     private String apiUrl;
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper;
 
     // ─────────────────────────────────────────────────────────────────────
     //  PUBLIC API
