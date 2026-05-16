@@ -31,6 +31,7 @@ public class Scan {
     @Column(name = "code_snippet", columnDefinition = "TEXT")
     private String codeSnippet;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ScanStatus status = ScanStatus.PENDING;
@@ -39,6 +40,7 @@ public class Scan {
     @Column(name = "scan_type", nullable = false)
     private ScanType scanType;
 
+    @Builder.Default
     @Column(name = "scanned_at", updatable = false)
     private LocalDateTime scannedAt = LocalDateTime.now();
 
