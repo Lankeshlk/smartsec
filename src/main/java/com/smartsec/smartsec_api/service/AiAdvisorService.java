@@ -33,7 +33,7 @@ public class AiAdvisorService {
      * No extra API call needed — data already in rawNodes.
      */
 
-    public void saveAiSuggestion(List<Vulnerability> vulnerabilities, List<JsonNode> rawNodes) {
+    public void saveAiSuggestions(List<Vulnerability> vulnerabilities, List<JsonNode> rawNodes) {
         for (int i = 0; i < vulnerabilities.size(); i++) {
             Vulnerability vuln = vulnerabilities.get(i);
             JsonNode node = rawNodes.get(i);

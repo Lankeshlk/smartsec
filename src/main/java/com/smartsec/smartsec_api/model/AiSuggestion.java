@@ -37,6 +37,7 @@ public class AiSuggestion {
     @Column(name = "fixed_code_snippet", columnDefinition = "TEXT")
     private String fixedCodeSnippet;
 
+    @Builder.Default
     @Column(name = "generated_at", updatable = false)
     private LocalDateTime generatedAt = LocalDateTime.now();
 }
