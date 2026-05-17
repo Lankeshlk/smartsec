@@ -100,7 +100,8 @@ public class ScannerEngine {
                 ),
                 "generationConfig", Map.of(
                         "temperature", 0.1,
-                        "maxOutputTokens", 4000
+                        "maxOutputTokens", 4000,
+                        "thinkingConfig", Map.of("thinkingBudget", 0)
                 )
         );
         String bodyJson = objectMapper.writeValueAsString(requestBody);

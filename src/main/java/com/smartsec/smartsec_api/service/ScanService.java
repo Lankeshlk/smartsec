@@ -52,6 +52,8 @@ public class ScanService {
             scan.setStatus(Scan.ScanStatus.COMPLETED);
             scan.setVulnerabilities(result.vulnerabilities());
         } catch (Exception e) {
+            System.out.println("Scan failed with error: " + e.getMessage());
+            e.printStackTrace();
             scan.setStatus(Scan.ScanStatus.FAILED);
         }
         return scanRepository.save(scan);

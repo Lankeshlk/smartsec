@@ -1,10 +1,9 @@
 package com.smartsec.smartsec_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,6 +20,8 @@ public class Scan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ToString.Exclude
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -44,7 +45,9 @@ public class Scan {
     @Column(name = "scanned_at", updatable = false)
     private LocalDateTime scannedAt = LocalDateTime.now();
 
-    @OneToMany(mappedBy = "scan", cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+    @ToString.Exclude
+    @JsonIgnoreProperties
+    @OneToMany(mappedBy = "scan", cascade = CascadeType.ALL, fetch = FetchType.EAGER )
     private List<Vulnerability> vulnerabilities;
 
     public enum ScanStatus {
